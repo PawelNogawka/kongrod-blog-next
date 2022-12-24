@@ -1,0 +1,25 @@
+// colors
+$main: #b7974f;
+$secondary: #806437;
+$text-dark: #333;
+$text-light: #686a6f;
+$white: #fff;
+
+// gradient
+
+$main-gradient: linear-gradient(
+  90deg,
+  rgba(0, 0, 0, 0.75) 100%,
+  rgba(0, 0, 0, 0.75) 100%
+);
+
+//animations
+
+@keyframes arrowAnimation {
+  0% {
+    transform: translateY(-2rem);
+  }
+  100% {
+    transform: translateY(3.3rem);
+  }
+}
