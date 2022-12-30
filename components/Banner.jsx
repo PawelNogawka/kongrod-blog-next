@@ -13,7 +13,7 @@ const Banner = () => {
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste,
               corrupti!
             </p>
-            <a href="#" className="btn">
+            <a href="#layout-wrapper" className="btn">
               exploruj
             </a>
           </div>

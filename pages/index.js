@@ -27,7 +27,7 @@ export default function Home({ posts }) {
         <Banner />
         <section className="posts ">
           <div className="container">
-            <section className="layout-wrapper ">
+            <section id="layout-wrapper" className="layout-wrapper ">
               <div className="layout-wrapper__posts">
                 <h2 className="posts__heading">wszystkie wpisy</h2>
                 {posts.map((post, index) => (
