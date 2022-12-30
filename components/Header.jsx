@@ -21,13 +21,13 @@ const Header = () => {
   const [active, setActive] = useState(false);
 
   const navRef = useRef(null);
-  const dzialaRef = useRef(null);
+  const headRef = useRef(null);
 
   const router = useRouter();
   const currentPath = router.pathname;
 
   useEffect(() => {
-    const headerEl = dzialaRef.current;
+    const headerEl = headRef.current;
 
     if (currentPath.startsWith("/kategorie")) {
       headerEl.classList.add("header--active");
@@ -56,8 +56,14 @@ const Header = () => {
     setActive((prevStat) => !prevStat);
   };
 
+  const handleLinkClick = () => {
+    setActive(false);
+    navRef.current.classList.remove("mobile-nav--active");
+  };
+  
+
   return (
-    <header ref={dzialaRef} className="header">
+    <header ref={headRef} className="header">
       <div className="container container--p0">
         <div className="header__wrapper">
           <Link href="/" className="header__logo">
@@ -85,6 +91,7 @@ const Header = () => {
               {categories.map((item) => (
                 <li key={item.name} className="desktop-nav__item">
                   <Link
+                  
                     href={`/kategorie/${item.slug}`}
                     className="desktop-nav__link"
                   >
@@ -110,13 +117,14 @@ const Header = () => {
             </button>
             <ul className="mobile-nav__list">
               <li className="mobile-nav__item">
-                <Link href="/" className="mobile-nav__link">
+                <Link  onClick={handleLinkClick}  href="/" className="mobile-nav__link">
                   strona firmowa
                 </Link>
               </li>
               {categories.map((item) => (
                 <li key={item.name} className="mobile-nav__item">
                   <Link
+                   onClick={handleLinkClick} 
                     href={`/kategorie/${item.slug}`}
                     className="mobile-nav__link"
                   >
@@ -125,7 +133,7 @@ const Header = () => {
                 </li>
               ))}
               <li className="mobile-nav__item">
-                <Link href="/" className="mobile-nav__link">
+                <Link  onClick={handleLinkClick}  href="/" className="mobile-nav__link">
                   kontakt
                 </Link>
               </li>

@@ -205,9 +205,14 @@ ul {
     }
   }
 
+
   &__icon {
     font-size: 3.7rem;
     pointer-events: none;
+  }
+
+  .header--active &__icon{
+    color:$main;
   }
 
   &__list {
