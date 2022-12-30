@@ -1,4 +1,4 @@
-Live site: https://kongrod-blog-next-qifrrjb0d-pawelnogawka.vercel.app/
+Live site: https://kongrod-blog-next-gkv3vaqco-pawelnogawka.vercel.app/
 
 
 Blog created in next.js, as a database i used https://hygraph.com/
