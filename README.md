@@ -1,3 +1,6 @@
+This blog is not yet ready, the contact page and SEO optimization still need to be done.
+
+
 Live site: https://kongrod-blog-next-gkv3vaqco-pawelnogawka.vercel.app/
 
 
