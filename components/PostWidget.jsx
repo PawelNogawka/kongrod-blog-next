@@ -47,7 +47,7 @@ const PostWidget = ({ slug, categories }) => {
       </h2>
       <div className="widget__wrapper">
         {posts.map((post, index) => (
-          <Link href={`/post/${post.slug}`} key={index} className="widget__box">
+          <Link href={`/blog/post/${post.slug}`} key={index} className="widget__box">
             <div className="widget__left">
               <Image
                 className="widget__img"

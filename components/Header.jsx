@@ -22,7 +22,7 @@ const sections = [
 { name: "oferta", slug: "/#services" },
 { name: "dlaczego my?", slug: "/#features" },
 { name: "blog", slug: "/blog" },
-{ name: "B2B", slug: "#" },
+{ name: "B2B", slug: "/wspolpraca-biznesowa" },
 ];
 
 const Header = () => {

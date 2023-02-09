@@ -30,7 +30,7 @@ const Categories = () => {
       <ul className="categories__list">
         {categories.map((item) => (
           <li key={item.name} className="categories__item">
-            <Link href={`/kategorie/${item.slug}`} className="categories__link">
+            <Link href={`/blog/kategorie/${item.slug}`} className="categories__link">
               {item.name}
             </Link>
           </li>
