@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import Loader from "./Loader";
+import Loader from "./Ui/Loader";
 
 import Image from "next/image";
 import Link from "next/link";

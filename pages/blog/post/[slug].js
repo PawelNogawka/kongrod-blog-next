@@ -2,13 +2,15 @@ import React from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
-import Post from "../../components/Post";
-import Categories from "../../components/Categories";
-import PostWidget from "../../components/PostWidget";
-import Author from "../../components/Author";
-import Loader from "../../components/Loader";
-import Error from "../../components/Error";
-import { getPostDetails, getPosts } from "../../services";
+import Post from "../../../components/Post";
+import Categories from "../../../components/Categories";
+import PostWidget from "../../../components/PostWidget";
+import Author from "../../../components/Author";
+import Loader from "../../../components/Ui/Loader";
+import Error from "../../../components/Ui/Error";
+import Contact from "../../../components/Contact";
+
+import { getPostDetails, getPosts } from "../../../services";
 
 const PostDetails = ({ post, error }) => {
   const router = useRouter();
@@ -45,6 +47,7 @@ const PostDetails = ({ post, error }) => {
           </section>
         </div>
       </main>
+      <Contact/>
     </>
   );
 };

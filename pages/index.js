@@ -1,19 +1,23 @@
+import React from "react";
 import Head from "next/head";
-import Image from "next/image";
 
 import Banner from "../components/Banner";
-import PostCard from "../components/PostCard";
-import PostWidget from "../components/PostWidget";
-import Categories from "../components/Categories";
+import About from "../components/Home/About";
+import Services from "../components/Home/Services";
+import Features from "../components/Home/Features";
+import B2b from "../components/Home/B2b";
+import Projects from "../components/Home/Projects";
+import Contact from "../components/Contact";
 
-import { getPosts } from "../services";
-
-export default function Home({ posts }) {
+const index = () => {
   return (
     <>
       <Head>
-        <title>Kongrod - Blog o tematyce stolarskiej</title>
-        <meta name="description" content="Blog o tematyce stolarskiej, znajdziesz tutaj porady isnpiracje oraz solidną dawkę wiedzy" />
+        <title>Kongrod - usługi stolarskie</title>
+        <meta
+          name="description"
+          content="Szukasz profesjonalnego stolarza ? napisz do nas"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,33 +27,23 @@ export default function Home({ posts }) {
           rel="stylesheet"
         />
       </Head>
+      <Banner
+        title="stolarnia Kongrod"
+        subtitle="Zajmiemy się wszystkim od poczatku do końca"
+        link="#about"
+        btnText="czytaj więcej"
+        direct="home"
+      />
       <main>
-        <Banner />
-        <section className="posts ">
-          <div className="container">
-            <section id="layout-wrapper" className="layout-wrapper ">
-              <div className="layout-wrapper__posts">
-                <h2 className="posts__heading">wszystkie wpisy</h2>
-                {posts.map((post, index) => (
-                  <PostCard key={index} post={post.node} />
-                ))}
-              </div>
-              <div className="layout-wrapper__widgets layout-wrapper__widgets--mt">
-                <PostWidget />
-                <Categories />
-              </div>
-            </section>
-          </div>
-        </section>
+        <About />
+        <Services />
+        <Features />
+        <B2b />
+        <Projects />
       </main>
+      <Contact />
     </>
   );
-}
+};
 
-export async function getStaticProps() {
-  const posts = (await getPosts()) || [];
-
-  return {
-    props: { posts },
-  };
-}
+export default index;

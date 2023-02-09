@@ -1,0 +1,40 @@
+{
+  "services": [
+    {
+      "slug": "konstrukcje-szkieletowe",
+      "title": "konstrukcje szkieletowe",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolores atque nisi illo repudiandae eum voluptatem, magnam odio voluptates eveniet quisquam nihil harum doloribus explicabo sed! Suscipit fuga asperiores harum quas odio incidunt iusto, ipsum recusandae. Asperiores itaque ipsa, cum aut, iste ipsum at illum error ullam nam sint cupiditate modi. Illum et quaerat architecto, molestias ad deleniti fugit? Assumenda qui perspiciatis asperiores delectus ullam. Odit impedit voluptate corporis dolore, et magni magnam quisquam reiciendis omnis ipsum? Voluptatum expedita fugiat magnam asperiores fugit ducimus! Culpa harum dolor iste quia doloremque, doloribus delectus ratione ea veritatis labore id aliquam consequatur. Velit.",
+      "imageSrc": "/blog-stolarski-duzy.jpg"
+    },
+    {
+      "slug": "wiaty-garazowe",
+      "title": "wiaty garazowe",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolores atque nisi illo repudiandae eum voluptatem, magnam odio voluptates eveniet quisquam nihil harum doloribus explicabo sed! Suscipit fuga asperiores harum quas odio incidunt iusto, ipsum recusandae. Asperiores itaque ipsa, cum aut, iste ipsum at illum error ullam nam sint cupiditate modi. Illum et quaerat architecto, molestias ad deleniti fugit? Assumenda qui perspiciatis asperiores delectus ullam. Odit impedit voluptate corporis dolore, et magni magnam quisquam reiciendis omnis ipsum? Voluptatum expedita fugiat magnam asperiores fugit ducimus! Culpa harum dolor iste quia doloremque, doloribus delectus ratione ea veritatis labore id aliquam consequatur. Velit.",
+      "imageSrc": "/taras-drewniany-zadaszony.jpg"
+    },
+    {
+      "slug": "altany-pergole",
+      "title": "altany pergole",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolores atque nisi illo repudiandae eum voluptatem, magnam odio voluptates eveniet quisquam nihil harum doloribus explicabo sed! Suscipit fuga asperiores harum quas odio incidunt iusto, ipsum recusandae. Asperiores itaque ipsa, cum aut, iste ipsum at illum error ullam nam sint cupiditate modi. Illum et quaerat architecto, molestias ad deleniti fugit? Assumenda qui perspiciatis asperiores delectus ullam. Odit impedit voluptate corporis dolore, et magni magnam quisquam reiciendis omnis ipsum? Voluptatum expedita fugiat magnam asperiores fugit ducimus! Culpa harum dolor iste quia doloremque, doloribus delectus ratione ea veritatis labore id aliquam consequatur. Velit.",
+      "imageSrc": "/altana-wolnostojąca.jpg"
+    },
+    {
+      "slug": "tarasy",
+      "title": "tarasy",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolores atque nisi illo repudiandae eum voluptatem, magnam odio voluptates eveniet quisquam nihil harum doloribus explicabo sed! Suscipit fuga asperiores harum quas odio incidunt iusto, ipsum recusandae. Asperiores itaque ipsa, cum aut, iste ipsum at illum error ullam nam sint cupiditate modi. Illum et quaerat architecto, molestias ad deleniti fugit? Assumenda qui perspiciatis asperiores delectus ullam. Odit impedit voluptate corporis dolore, et magni magnam quisquam reiciendis omnis ipsum? Voluptatum expedita fugiat magnam asperiores fugit ducimus! Culpa harum dolor iste quia doloremque, doloribus delectus ratione ea veritatis labore id aliquam consequatur. Velit.",
+      "imageSrc": "/taras-drewniany-zadaszony.jpg"
+    },
+    {
+      "slug": "schody-drewniane",
+      "title": "schody drewniane",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolores atque nisi illo repudiandae eum voluptatem, magnam odio voluptates eveniet quisquam nihil harum doloribus explicabo sed! Suscipit fuga asperiores harum quas odio incidunt iusto, ipsum recusandae. Asperiores itaque ipsa, cum aut, iste ipsum at illum error ullam nam sint cupiditate modi. Illum et quaerat architecto, molestias ad deleniti fugit? Assumenda qui perspiciatis asperiores delectus ullam. Odit impedit voluptate corporis dolore, et magni magnam quisquam reiciendis omnis ipsum? Voluptatum expedita fugiat magnam asperiores fugit ducimus! Culpa harum dolor iste quia doloremque, doloribus delectus ratione ea veritatis labore id aliquam consequatur. Velit.",
+      "imageSrc": "/debowe-schody-giete.jpg"
+    },
+    {
+      "slug": "renowacje-budynkow",
+      "title": "renowacje budynkow",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolores atque nisi illo repudiandae eum voluptatem, magnam odio voluptates eveniet quisquam nihil harum doloribus explicabo sed! Suscipit fuga asperiores harum quas odio incidunt iusto, ipsum recusandae. Asperiores itaque ipsa, cum aut, iste ipsum at illum error ullam nam sint cupiditate modi. Illum et quaerat architecto, molestias ad deleniti fugit? Assumenda qui perspiciatis asperiores delectus ullam. Odit impedit voluptate corporis dolore, et magni magnam quisquam reiciendis omnis ipsum? Voluptatum expedita fugiat magnam asperiores fugit ducimus! Culpa harum dolor iste quia doloremque, doloribus delectus ratione ea veritatis labore id aliquam consequatur. Velit.",
+      "imageSrc": "/blog-stolarski-duzy.jpg"
+    }
+  ]
+}

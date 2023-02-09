@@ -2,12 +2,12 @@ import React from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
-import { getCategories, getCategoryPost } from "../../services";
+import { getCategories, getCategoryPost } from "../../../services";
 
-import PostCard from "../../components/PostCard";
-import Categories from "../../components/Categories";
-import Loader from "../../components/Loader";
-import Error from "../../components/Error";
+import PostCard from "../../../components/PostCard";
+import Categories from "../../../components/Categories";
+import Loader from "../../../components/Ui/Loader";
+import Error from "../../../components/Ui/Error";
 
 const CategoryPosts = ({ posts, error }) => {
   const router = useRouter();

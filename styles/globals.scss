@@ -8,6 +8,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-padding-top: 7rem;
   scroll-behavior: smooth;
 }
 
@@ -36,7 +37,7 @@ ul {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 6rem 0;
+   padding-top: 6rem;
 
   &--p0 {
     padding: 0;
@@ -50,6 +51,7 @@ ul {
   text-transform: capitalize;
   letter-spacing: 0.05rem;
   transition: background-color 0.4s ease;
+  font-size: 1.6rem;
 
   &--white {
     background-color: $white;
@@ -62,6 +64,38 @@ ul {
   }
   &:hover {
     background-color: darken(#b7974f, 20%);
+  }
+
+  &--outlined {
+    background-color: #fff;
+    color: $main;
+    border: 0.15rem solid $main;
+
+    &:hover{
+      background-color: $main;
+      color:#fff;
+    }
+  }
+}
+
+.section-padding {
+  padding: 4rem 0;
+}
+
+.section-heading {
+  font-weight: 400;
+  color: $text-dark;
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 3rem;
+  font-size: 2.7rem;
+
+  &--m0 {
+    margin: 0;
+  }
+
+  &--white {
+    color: white;
   }
 }
 
@@ -111,8 +145,64 @@ ul {
   }
 }
 
+// modal
 
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  z-index: 2100;
+}
 
+.modal-overlay {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 95%;
+  max-width: 55rem;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  border-radius: 2rem;
+  z-index: 3000;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.modal__control-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem;
+  border: 0.1rem solid white;
+  position: absolute;
+  font-size: 3rem;
+  color: white;
+
+  &--next {
+    bottom: -3rem;
+    right: 2rem;
+  }
+
+  &--prev {
+    bottom: -3rem;
+    left: 2rem;
+  }
+
+  &--close {
+    top: -4rem;
+    right: 2rem;
+  }
+}
 
 //header
 
@@ -124,7 +214,7 @@ ul {
   padding: 2rem 0;
   background-color: transparent;
   transition: all 0.4s ease;
-  z-index: 10000;
+  z-index: 1000;
 
   &--active {
     padding: 1.6rem 0 !important;
@@ -185,6 +275,11 @@ ul {
   &__link {
     padding: 0.5rem;
     color: $white;
+    transition: color .3s ease;
+
+    &:hover{
+      color: $main;
+    }
   }
 }
 
@@ -205,14 +300,13 @@ ul {
     }
   }
 
-
   &__icon {
     font-size: 3.7rem;
     pointer-events: none;
   }
 
-  .header--active &__icon{
-    color:$main;
+  .header--active &__icon {
+    color: $main;
   }
 
   &__list {
@@ -241,19 +335,35 @@ ul {
     padding: 0.7rem;
     font-size: 2.2rem;
     transition: color 0.3s ease;
+
+    &:hover{
+      color: $main;
+    }
   }
 }
-
 
 // banner
 
 .banner {
   min-height: 100vh;
   width: 100%;
-  background-image: $main-gradient, url("../assets/uslugi-stolarskie-maly.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
+  &--home {
+    background-image: $main-gradient,
+      url("../assets/uslugi-stolarskie-maly.jpg");
+  }
+
+  &--b2b {
+    background-image: $main-gradient,
+      url("../public//wspolpraca-biznesowa-stolarz-maly.jpg");
+  }
+
+  &--blog {
+    background-image: $main-gradient, url("../public//blog-stolarski-maly.jpg");
+  }
 
   &__wrapper {
     display: flex;
@@ -281,7 +391,7 @@ ul {
 
   &__subtitle {
     margin-bottom: 0.7rem;
-    font-size: 1.5rem;
+    line-height: 175%;
   }
 
   &__arrow {
@@ -297,6 +407,417 @@ ul {
     color: $white;
     font-size: 2.2rem;
     animation: arrowAnimation 1s infinite linear;
+  }
+}
+
+// home about
+
+.about {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  &__features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem 3rem;
+  }
+
+  &__feature-box {
+    flex: 1 1 23rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    border: 0.1rem solid $main;
+    box-shadow: $small-shadow;
+
+    svg {
+      color: $main;
+      font-size: 5rem;
+    }
+  }
+
+  &__feature-amount {
+    font-weight: 400;
+    color: $text-dark;
+    font-size: 3rem;
+  }
+
+  &__feature-title {
+    margin-top: -0.7rem;
+    color: $text-light;
+    text-align: center;
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+  }
+
+  &__img-box {
+    flex: 1 1 40rem;
+    box-shadow: $big-shadow;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content-box {
+    flex: 1 1 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+
+  &__content-title {
+    line-height: 170%;
+    font-size: 1.8rem;
+    color: $text-dark;
+    font-weight: 400;
+  }
+
+  &__content-text {
+    line-height: 170%;
+    color: $text-light;
+  }
+}
+
+// home services
+
+.services {
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+  }
+
+  &__box {
+    flex: 1 1 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2.5rem;
+    align-items: center;
+    padding: 2rem;
+    box-shadow: $big-shadow;
+    border: 0.1rem solid $main;
+
+    svg {
+      font-size: 6rem;
+      color: $main;
+    }
+  }
+
+  &__name {
+    font-size: 2rem;
+    font-weight: 400;
+    color: $text-dark;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  &__content {
+    line-height: 170%;
+    color: $text-light;
+    text-align: center;
+    flex: 1;
+  }
+}
+
+// home features
+
+.features {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
+  }
+
+  &__boxes-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__box {
+    flex: 1 1 32rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.5rem;
+    padding: 2rem;
+    border: 0;
+
+    svg {
+      color: $main;
+      font-size: 6rem;
+    }
+  }
+
+  &__text {
+    color: $text-dark;
+    font-size: 2.4rem;
+    text-transform: capitalize;
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  &__img-box {
+    flex: 1 1 40rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      box-shadow: $big-shadow;
+    }
+  }
+
+  &__row-content {
+    flex: 1 1 40rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &__title {
+    font-size: 1.9rem;
+    color: $text-dark;
+    line-height: 170%;
+    font-weight: 400;
+  }
+
+  &__txt {
+    line-height: 170%;
+    color: $text-light;
+  }
+
+  &__features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  &__feature {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    line-height: 170%;
+    svg {
+      flex-shrink: 0;
+      color: $main;
+      font-size: 2rem;
+    }
+  }
+}
+
+// home b2b
+
+.b2b {
+  min-height: 47rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: $main-gradient,
+    url("../public/wspolpraca-biznesowa-stolarz-maly.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  &__txt {
+    color: $white;
+    line-height: 170%;
+    text-align: center;
+    width: 100%;
+    max-width: 80rem;
+  }
+}
+
+// home projects
+
+.projects {
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+  }
+
+  &__image-box {
+    height: 27rem;
+    flex: 1 1 30rem;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+}
+
+//contact
+
+.contact {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  &__top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  &__tile {
+    flex: 1 1 25rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.7rem;
+    border: 0.1rem solid $main;
+    box-shadow: $small-shadow;
+  }
+
+  &__icon-box {
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $main;
+
+    svg {
+      font-size: 3rem;
+      color: #fff;
+    }
+  }
+
+  &__tile-column {
+    text-align: center;
+    a {
+      color: $text-light;
+      text-decoration: underline;
+    }
+  }
+
+  &__tile-name {
+    margin-bottom: 1rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: $text-dark;
+    font-size: 1.8rem;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    border: 0.1rem solid $main;
+    box-shadow: $big-shadow;
+  }
+
+  &__map {
+    margin-top: 3rem;
+    width: 100%;
+  }
+}
+
+// form
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+
+  &__heading {
+    text-transform: capitalize;
+    font-weight: 400;
+    color: $text-dark;
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  &__inputs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+  }
+
+  &__input-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+
+    label {
+      text-transform: capitalize;
+      color: $text-light;
+    }
+  }
+
+  &__input,
+  &__txt {
+    width: 100%;
+    padding: 1rem;
+    border: 0;
+    background: 0;
+    border: 0.15rem solid $main;
+    transition: box-shadow 0.4s ease;
+
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 .3rem $main;
+    }
+  }
+
+  &__txt {
+    max-width: 80rem;
+    min-height: 10rem;
+    max-height: 23rem;
+    font-family: sans-serif;
+  }
+
+  &__input:invalid[focused="true"] ~ &__error,
+  &__txt:invalid[focused="true"] ~ &__error {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__error {
+    position: absolute;
+    bottom: -2.1rem;
+    left: 0;
+    color: $error;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 1.3rem;
   }
 }
 
@@ -448,7 +969,6 @@ ul {
     color: $text-light;
   }
 }
-
 
 //widget
 
@@ -631,49 +1151,177 @@ ul {
   }
 }
 
+
+// b2b
+
+
+.about-b2b {
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem 2rem 5rem 2rem;
+  }
+
+  &__advantage {
+    flex: 1 1 25rem;
+    padding: 3rem 2rem;
+    border: 0.2rem solid $main;
+    text-align: center;
+    box-shadow: $small-shadow;
+  }
+
+  &__name {
+    margin-top: 1rem;
+    font-size: 1.9rem;
+    font-weight: 400;
+    color: $text-dark;
+    text-transform: capitalize;
+  }
+  &__description-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+    margin:0 2rem;
+  }
+
+  &__img-box {
+    flex: 1 1 40rem;
+
+  }
+
+  &__img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    box-shadow: $big-shadow;
+  }
+  &__description-txt {
+    flex: 1 1 40rem;
+  }
+  &__info{
+    line-height: 170%;
+    &--dark{
+      margin-bottom: 3rem;
+      color:$text-dark;
+    }  
+    &--light{
+      color:$text-light;
+    }  
+  }
+}
+
+
+// service details
+
+.service-details{
+  &__container{
+    padding-top: 9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+
+    img{
+      box-shadow: $big-shadow;
+      width: 100%;
+      max-width: 80rem;
+    }
+  }
+  &__heading{
+    font-weight: 500;
+    font-size:2.6rem;
+    text-transform: capitalize;
+    text-align: center;
+    color:$text-dark;
+  }
+
+  &__desc{
+    color:$text-light;
+    line-height: 160%;
+    text-align: center;
+    max-width: 90rem;
+  }
+}
+
+
 //footer
 
 .footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding: 3rem 0;
-  background-color: $secondary;
-  color: $white;
+  background-color: #5a4d27;
+  width: 100%;
 
   &__social-media {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem 0;
+    background-color: $secondary;
   }
 
-  &__rights {
+  &__social-icons {
     display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    font-size: 1.7rem;
+    gap: 1rem;
+    a {
+      transition: transform 0.4s ease;
+      color: white;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+
+      svg {
+        font-size: 3rem;
+      }
+    }
   }
 
-  &__copyright-icon {
+  &__social-heading {
+    font-weight: 400;
     font-size: 1.8rem;
-    margin: 0 0.6rem;
-  }
-  &__social-icon {
-    font-size: 2.3rem;
-    margin-top: 0.3rem;
+    color: white;
   }
 
-  a {
-    color: $white;
-    padding: 0.6rem;
+  &__nav {
+    padding: 3rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
   }
-  span {
-    margin-right: 1rem;
+
+  &__link {
+    position: relative;
+    padding: 1rem 0;
+    font-size: 1.6rem;
+    color: white;
+    transition: transform 0.7s ease;
+    text-transform: capitalize;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0%;
+      left: 0;
+      width: 100%;
+      height: 0.2rem;
+      transform: scaleX(0);
+      background-color: white;
+      transition: transform 0.3s ease;
+      transform-origin: left;
+    }
+
+    &:hover.footer__link::after {
+      transform: scaleX(1);
+    }
   }
 }
-
 
 //media
 
@@ -686,15 +1334,71 @@ ul {
 }
 
 @media (min-width: 778px) {
+  .section-padding {
+    padding: 6rem 0;
+  }
+  .section-heading {
+    font-size: 3.9rem;
+    margin-bottom: 8rem;
+
+    &--m0 {
+      margin: 0;
+    }
+  }
   .header {
     padding: 2.7rem 0;
   }
-  .banner {
+
+  .w {
     &__heading {
       font-size: 5rem;
     }
     &__subtitle {
       font-size: 1.6rem;
+    }
+  }
+
+  .banner {
+    &__heading {
+      font-size: 7rem;
+    }
+  }
+  .about {
+    &__img-box {
+      img {
+        min-height: 40rem;
+      }
+    }
+    .features {
+      &__box {
+        &--border-one {
+          border-right: 0.1rem solid $main;
+          border-bottom: 0.1rem solid $main;
+        }
+        &--border-two {
+          border-bottom: 0.1rem solid $main;
+        }
+
+        &--border-three {
+          border-right: 0.1rem solid $main;
+          border-bottom: 0.1rem solid $main;
+        }
+        &--border-four {
+          border-bottom: 0.1rem solid $main;
+        }
+        &--border-five {
+          border-right: 0.1rem solid $main;
+        }
+      }
+    }
+  }
+
+  .features__img-box {
+    height: 45rem;
+  }
+  .contact {
+    &__map {
+      margin-top: 5rem;
     }
   }
   .post {
@@ -703,6 +1407,19 @@ ul {
     }
     &__heading {
       font-size: 3.3rem;
+    }
+  }
+
+  .service-details{
+    &__container{
+      gap: 4rem;
+      img{
+        height: 44rem;
+      }
+    }
+
+    &__heading{
+      font-size:4rem;
     }
   }
 
@@ -736,8 +1453,25 @@ ul {
   }
 
   .banner {
+    &--home {
+      background-image: $main-gradient,
+        url("../assets/uslugi-stolarskie-duzy.jpg");
+    }
+
+    &--b2b {
+      background-image: $main-gradient,
+        url("../public//wspolpraca-biznesowa-stolarz-duzy.jpg");
+    }
+
+    &--blog {
+      background-image: $main-gradient,
+        url("../public//blog-stolarski-duzy.jpg");
+    }
+  }
+
+  .b2b {
     background-image: $main-gradient,
-      url("../assets/uslugi-stolarskie-duzy.jpg");
+      url("../public//wspolpraca-biznesowa-stolarz-duzy.jpg");
   }
 
   .posts {
@@ -749,10 +1483,57 @@ ul {
   }
 
   .container {
-    padding: 8rem 0;
+    padding-top: 8rem;
 
     &--p0 {
       padding: 0;
+    }
+  }
+  .features {
+    &__box {
+      &--border-one {
+        border-right: 0.1rem solid $main;
+        border-bottom: 0.1rem solid $main;
+      }
+      &--border-two {
+        border-bottom: 0.1rem solid $main;
+        border-right: 0.1rem solid $main;
+      }
+
+      &--border-three {
+        border-bottom: 0.1rem solid $main;
+        border-right: none;
+      }
+      &--border-four {
+        border-bottom: none;
+        border-right: 0.1rem solid $main;
+      }
+      &--border-five {
+        border-right: 0.1rem solid $main;
+      }
+    }
+  }
+}
+
+@media (min-width: 1100px) {
+  .modal-overlay {
+    max-width: 75rem;
+    height: 50rem;
+  }
+
+  .modal__control-btn {
+    &--next {
+      bottom: 50%;
+      right: -6rem;
+    }
+    &--prev {
+      bottom: 50%;
+      left: -6rem;
+    }
+
+    &--close {
+      top: 2rem;
+      right: -6rem;
     }
   }
 }

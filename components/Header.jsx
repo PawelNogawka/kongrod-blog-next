@@ -11,10 +11,18 @@ import { RiMenu4Fill } from "react-icons/ri";
 import { AiOutlineClose } from "react-icons/ai";
 
 const categories = [
-  { name: "narzedzia", slug: "narzedzia" },
-  { name: "techniki", slug: "techniki" },
-  { name: "inspiracje", slug: "inspiracje-stolarskie" },
-  { name: "materiały", slug: "materialy" },
+  { name: "narzedzia", slug: "/blog/kategorie/narzedzia" },
+  { name: "techniki", slug: "/blog/kategorie/techniki" },
+  { name: "inspiracje", slug: "/blog/kategorie/inspiracje-stolarskie" },
+  { name: "materiały", slug: "/blog/kategorie/materialy" },
+];
+
+const sections = [
+{ name: "o nas", slug: "/#about" },
+{ name: "oferta", slug: "/#services" },
+{ name: "dlaczego my?", slug: "/#features" },
+{ name: "blog", slug: "/blog" },
+{ name: "B2B", slug: "#" },
 ];
 
 const Header = () => {
@@ -26,10 +34,14 @@ const Header = () => {
   const router = useRouter();
   const currentPath = router.pathname;
 
+  const links = currentPath.startsWith("/blog" ) ? categories : sections
+
+   
+
   useEffect(() => {
     const headerEl = headRef.current;
 
-    if (currentPath.startsWith("/kategorie")) {
+    if (currentPath.startsWith("/blog")) {
       headerEl.classList.add("header--active");
     }
 
@@ -60,7 +72,6 @@ const Header = () => {
     setActive(false);
     navRef.current.classList.remove("mobile-nav--active");
   };
-  
 
   return (
     <header ref={headRef} className="header">
@@ -80,27 +91,25 @@ const Header = () => {
             <ul className="desktop-nav__list">
               <li className="desktop-nav__item">
                 <Link
-                  href="https://kongrod.pl/"
+                  href="/"
                   className="desktop-nav__link"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
-                  strona firmowa
+                  strona główna
                 </Link>
               </li>
-              {categories.map((item) => (
+              {links.map((item) => (
                 <li key={item.name} className="desktop-nav__item">
                   <Link
-                  
-                    href={`/kategorie/${item.slug}`}
+                    href={`${item.slug}`}
                     className="desktop-nav__link"
+                    scroll={currentPath === '/' ? false : true}
                   >
                     {item.name}
                   </Link>
                 </li>
               ))}
               <li className="desktop-nav__item">
-                <Link href="/" className="desktop-nav__link">
+                <Link href="#contact" className="desktop-nav__link desktop-nav__link--contact" scroll={currentPath === '/' ? false : true}>
                   kontakt
                 </Link>
               </li>
@@ -117,23 +126,32 @@ const Header = () => {
             </button>
             <ul className="mobile-nav__list">
               <li className="mobile-nav__item">
-                <Link  onClick={handleLinkClick}  href="/" className="mobile-nav__link">
+                <Link
+                  onClick={handleLinkClick}
+                  href="/"
+                  className="mobile-nav__link"
+                >
                   strona firmowa
                 </Link>
               </li>
               {categories.map((item) => (
                 <li key={item.name} className="mobile-nav__item">
                   <Link
-                   onClick={handleLinkClick} 
-                    href={`/kategorie/${item.slug}`}
+                    onClick={handleLinkClick}
+                    href={`${item.slug}`}
                     className="mobile-nav__link"
+                    scroll={currentPath === '/' ? false : true}
                   >
                     {item.name}
                   </Link>
                 </li>
               ))}
               <li className="mobile-nav__item">
-                <Link  onClick={handleLinkClick}  href="/" className="mobile-nav__link">
+                <Link
+                  onClick={handleLinkClick}
+                  href="#contact"
+                  className="mobile-nav__link"
+                >
                   kontakt
                 </Link>
               </li>

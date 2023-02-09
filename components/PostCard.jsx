@@ -33,7 +33,7 @@ const PostCard = ({ post }) => {
 
         <h3 className="post-card__title">{post.title}</h3>
         <p className="post-card__excerpt">{post.excerpt}...</p>
-        <Link href={`/post/${post.slug}`}>
+        <Link href={`/blog/post/${post.slug}`}>
           <button className="btn">czytaj więcej</button>
         </Link>
       </div>
