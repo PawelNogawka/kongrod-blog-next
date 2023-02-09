@@ -1,4 +1,7 @@
-Live site: https://kongrod-blog-next-qifrrjb0d-pawelnogawka.vercel.app/
+This blog is not yet ready, the contact page and SEO optimization still need to be done.
+
+
+Live site: https://kongrod-blog-next-gkv3vaqco-pawelnogawka.vercel.app/
 
 
 Blog created in next.js, as a database i used https://hygraph.com/
