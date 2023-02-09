@@ -12,7 +12,7 @@ const ServicePage = ({ loadedService }) => {
   return (
     <>
       <Head>
-        <title>{`Usługi stolarskie - ${loadedService.title}`} </title>
+        <title>{`Usługi stolarskie - ${loadedService.title ? loadedService.title : "wybierz usługę"}`} </title>
         <meta
           name="description"
           content="Blog o tematyce stolarskiej, znajdziesz tutaj porady isnpiracje oraz solidną dawkę wiedzy"
