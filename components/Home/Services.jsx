@@ -19,7 +19,7 @@ const Services = () => {
             <Image
               src={woodenHouse}
               alt="konstrukcja szkieletowa"
-              class="offers__icon"
+              className="offers__icon"
               width={70}
             />
             <h3 className="services__name">konstrukcje szkieletowe</h3>
@@ -36,7 +36,7 @@ const Services = () => {
             <Image
               src={garrage}
               alt="drewniane garaże samochodowe"
-              class="offers__icon"
+              className="offers__icon"
               width={70}
             />
             <h3 className="services__name">wiaty garażowe</h3>
@@ -78,7 +78,7 @@ const Services = () => {
           <Image
               src={stairs}
               alt="drewniane schody"
-              class="offers__icon"
+              className="offers__icon"
               width={70}
             />
             <h3 className="services__name">Schody drewniane</h3>

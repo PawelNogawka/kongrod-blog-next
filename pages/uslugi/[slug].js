@@ -2,17 +2,20 @@ import fs from "fs/promises";
 import path from "path";
 import React from "react";
 import Head from "next/head";
-import Image from "next/image";
 
 import ServiceDetail from "../../components/ServiceDetails/ServiceDetail";
 import Contact from "../../components/Contact"
 const ServicePage = ({ loadedService }) => {
- 
+
+
+  if(!loadedService){
+    return
+  }
 
   return (
     <>
       <Head>
-        <title>{`Usługi stolarskie - ${loadedService.title ? loadedService.title : "wybierz usługę"}`} </title>
+        <title>Usługi stolarskie </title>
         <meta
           name="description"
           content="Blog o tematyce stolarskiej, znajdziesz tutaj porady isnpiracje oraz solidną dawkę wiedzy"

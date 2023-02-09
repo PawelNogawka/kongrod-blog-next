@@ -48,6 +48,7 @@ const CategoryPosts = ({ posts, error }) => {
 export default CategoryPosts;
 
 export async function getStaticProps({ params }) {
+  console.log(params)
   try {
     const posts = await getCategoryPost(params.slug);
 
